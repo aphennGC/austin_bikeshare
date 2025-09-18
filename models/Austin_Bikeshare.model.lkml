@@ -30,6 +30,8 @@ explore: bikeshare_trips {
     type: left_outer
     sql_on: ${bikeshare_trips.start_station_id} = ${start_station.station_id} ;;
     relationship: many_to_one
+    # Add this line to filter the start_station join
+    sql_where: ${start_station.name} IS NOT NULL ;;
   }
 
   join: end_station {
@@ -40,5 +42,7 @@ explore: bikeshare_trips {
     # Casting end_station_id to an INTEGER for the join. Ensure this is safe for your data.
     sql_on: SAFE_CAST(${bikeshare_trips.end_station_id} AS INT64) = ${end_station.station_id} ;;
     relationship: many_to_one
+    # Add this line to filter the end_station join
+    sql_where: ${end_station.name} IS NOT NULL ;;
   }
 }
