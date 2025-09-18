@@ -18,6 +18,12 @@ explore: bikeshare_trips {
   label: "Bikeshare Trips & Stations 🚲"
   description: "Explore bikeshare trip data, including details about the start and end stations."
 
+# You are taking the bikeshare_trips table and bolting on the bikeshare_stations table twice.
+
+# The first time, you link using the trip's start_station_id to get details about where the trip began.
+# The second time, you link using the trip's end_station_id to get details about where the trip ended.
+# This setup allows users exploring the data to select fields like "Trip Duration", "Start Station Name", and "End Station Council District" all in the same query.
+
   join: start_station {
     view_label: "Start Station"
     from: bikeshare_stations
