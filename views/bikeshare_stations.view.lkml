@@ -37,6 +37,7 @@ view: bikeshare_stations {
     sql: ${TABLE}.image ;;
   }
   dimension: location {
+    label: "Location"
     type: location
     sql_latitude: REGEXP_EXTRACT(${TABLE}.location, r"\((\-?\d+\.\d+),") ;;
     # REGEXP_EXTRACT: This function extracts the first substring in ${TABLE}.location that matches the provided regular expression.
