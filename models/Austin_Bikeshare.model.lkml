@@ -14,7 +14,7 @@ persist_with: Austin_Bikeshare_default_datagroup
 include: "/views/**/*.view.lkml" # Assuming your views are in a 'views' subfolder
 
 explore: bikeshare_trips {
-  label: "Bikeshare Trips & Stations"
+  label: "Bikeshare Trips & Stations 🚲"
   description: "Explore bikeshare trip data, including details about the start and end stations."
 
   join: start_station {
